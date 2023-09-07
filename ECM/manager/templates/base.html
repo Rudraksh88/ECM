@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ campaign.Subject }}</title>
+</head>
+<body>
+    <div>
+        <a href="{{ campaign.article_url }}">Read the article</a>
+    </div>
+
+    <hr>
+
+    <div>
+        <!-- Render HTML content from campaign -->
+        {{ campaign.html_content | safe }}
+    </div>
+
+    <hr>
+
+    <h2>Plain Text Version</h2>
+
+    <div>
+        <!-- Render plain text content from campaign -->
+        {{ campaign.plain_text_content | default:"No plain text content available." }}
+    </div>
+</body>
+</html>
