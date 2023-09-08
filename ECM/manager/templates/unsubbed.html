@@ -15,8 +15,13 @@
 <body>
     <div class='container d-flex justify-content-center mt-4'>
         <div class="alert alert-success" role="alert" style='width: 30%;'>
+            {% if no_subs %}
+            <h4 class="alert-title">No active subscriptions!</h4>
+            <div class="text-secondary">You are not subscribed to any campaigns</div>
+            {% else %}
             <h4 class="alert-title">Unsubscribed!</h4>
             <div class="text-secondary">You have been unsubscribed from all campaigns.</div>
+            {% endif %}
         </div>
     </div>
 </body>
