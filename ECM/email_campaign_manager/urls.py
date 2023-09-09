@@ -17,9 +17,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from manager.views import unsubscribe, send_email
+import markdown
+from django.shortcuts import render
+
+def render_readme(request):
+    return render(request, 'readme.html')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('unsub/', unsubscribe, name='unsubscribe'),
-    path('temp/', send_email, name='send_email') # Temporary URL to send emails
+    path('', render_readme, name='home'), # URL to render the readme.html file
+    path('unsub', unsubscribe, name='unsubscribe'), # URL to unsubscribe
+    path('test', send_email, name='send_email'), # Temporary URL to send a test email
 ]

@@ -22,7 +22,10 @@ class Campaign(models.Model):
     '''
     campaign_id = models.AutoField(primary_key=True, verbose_name='Campaign ID') # This is the primary key
     name = models.CharField(max_length=255, unique=True, verbose_name='Campaign Name') # This is the unique identifier
-    created_by = models.ForeignKey(settings.AUTH_USER_MODEL, to_field='username', on_delete=models.CASCADE, verbose_name='Campaign Author') # created_by
+    created_by = models.ForeignKey(settings.AUTH_USER_MODEL,
+                                   to_field='username',
+                                   on_delete=models.CASCADE,
+                                   verbose_name='Campaign Author') # created_by
 
     def __str__(self):
         return self.name
@@ -36,12 +39,21 @@ class Subscriptions(models.Model):
     '''
     This model stores the subscription status of a subscriber for a campaign.
     '''
-    subscriber_email = models.ForeignKey(Subscriber, to_field='email', on_delete=models.CASCADE, verbose_name='Subscriber Email') # subscriber_email
-    campaign_name = models.ForeignKey(Campaign, on_delete=models.CASCADE, to_field='name', related_name='campaign_name', verbose_name='Campaign Name') # campaign_name
+    subscriber_email = models.ForeignKey(Subscriber,
+                                         to_field='email',
+                                         on_delete=models.CASCADE,
+                                         verbose_name='Subscriber Email') # subscriber_email
+
+    campaign_name = models.ForeignKey(Campaign,
+                                      on_delete=models.CASCADE,
+                                      to_field='name',
+                                      related_name='campaign_name',
+                                      verbose_name='Campaign Name') # campaign_name
+
     is_subscribed = models.BooleanField(default=True)
 
     def __str__(self):
-        return f'{self.subscriber_email} | {self.campaign_name}'
+        return f'{self.campaign_name}'
 
     class Meta:
         verbose_name = 'Subscription'
@@ -51,13 +63,18 @@ class Subscriptions(models.Model):
         ]
 
 class CampaignEmail(models.Model):
-    # Each Campaign has 'Subject', 'preview_text', 'article_url', 'html_content', 'plain_text_content', 'published_date'.
-
     '''
     This model stores the details of a campaign email.
+
+    Each Campaign has 'Subject', 'preview_text', 'article_url', 'html_content', 'plain_text_content', 'published_date'.
     '''
 
-    campaign = models.ForeignKey(Campaign, on_delete=models.CASCADE, to_field='name', related_name='campaign_name_email', verbose_name='Campaign Name') # campaign_name
+    campaign = models.ForeignKey(Campaign,
+                                 on_delete=models.CASCADE,
+                                 to_field='name',
+                                 related_name='campaign_name_email',
+                                 verbose_name='Campaign Name') # campaign_name
+
     subject = models.CharField(max_length=255, verbose_name='Subject')
     preview_text = models.CharField(max_length=255, verbose_name='Preview Text')
     article_url = models.URLField(max_length=255, verbose_name='Article URL')
@@ -66,7 +83,7 @@ class CampaignEmail(models.Model):
     published_date = models.DateTimeField(default=timezone.now, verbose_name='Published Date')
 
     def __str__(self):
-        return f'{self.campaign} | {self.subject}'
+        return f'{self.subject}'
 
     class Meta:
         verbose_name = 'Campaign Email'

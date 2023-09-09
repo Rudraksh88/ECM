@@ -1,2 +1,7 @@
 ECM/email_campaign_manager/__pycache__/
 ECM/manager/__pycache__/
+script.py
+ECM/manager/tasks.bak
+ECM/manager/templates/h.html
+ECM/manager/templates/home.html
+ECM/manager/management/commands/__pycache__

@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="referrer" content="no-referrer" />
+    <meta name="referrer" content="unsafe-url" />
+    <meta name="referrer" content="origin" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    <meta name="referrer" content="origin-when-cross-origin" />
+    <title>README</title>
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"> -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+        html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font: inherit;
+            font-size: 100%;
+            vertical-align: baseline;
+            font-family: 'Inter', sans-serif !important;
+        }
+
+        code, pre {
+            font-family: monospace !important;
+        }
+
+        html {
+            line-height: 1
+        }
+
+        ol,
+        ul {
+            list-style: none
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0
+        }
+
+        caption,
+        th,
+        td {
+            text-align: left;
+            font-weight: normal;
+            vertical-align: middle
+        }
+
+        q,
+        blockquote {
+            quotes: none
+        }
+
+        q:before,
+        q:after,
+        blockquote:before,
+        blockquote:after {
+            content: "";
+            content: none
+        }
+
+        a img {
+            border: none
+        }
+
+        article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+            display: block
+        }
+
+        * {
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box
+        }
+
+        html {
+            font-size: 16px;
+            line-height: 1.6em;
+            -webkit-text-size-adjust: 100%
+        }
+
+
+        body {
+            background-color: #fff;
+            color: #545454;
+
+            font-family: "Raleway", sans-serif;
+            text-rendering: optimizeLegibility;
+
+            max-width: 46em;
+            margin: 2em auto;
+
+            padding: 1.6em 3.15em;
+        }
+
+
+        h1 {
+            font-family: "Raleway", sans-serif;
+            font-weight: 700;
+            color: #333;
+            font-size: 1.6em;
+            line-height: 1.3em;
+            margin-bottom: .78571em
+        }
+
+        h2 {
+            font-family: "Raleway", sans-serif;
+            font-weight: 600;
+            color: #333;
+            font-size: 1.3em;
+            line-height: 1em;
+            margin-top: 2em;
+            margin-bottom: .6em
+        }
+
+        h3 {
+            font-family: "Raleway", sans-serif;
+            font-weight: 600;
+            color: #333;
+            font-size: 1.15em;
+            line-height: 1em;
+            margin-top: 1em;
+            margin-bottom: .6em
+        }
+
+        h4 {
+            font-family: "Raleway", sans-serif;
+            font-weight: 500;
+            color: #333;
+            font-size: 1em;
+            line-height: 1em;
+            margin-top: 1em;
+            margin-bottom: .6em
+        }
+
+
+
+        p {
+            margin-bottom: 1.57143em;
+            hyphens: auto
+        }
+
+
+        b, strong {
+            font-family: "Raleway", sans-serif;
+            font-weight: 700;
+        }
+
+        i, em {
+            font-family: "Raleway", sans-serif;
+            font-style: italic;
+        }
+
+        u {
+            text-decoration: none;
+            background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, #e06e73 50%);
+            background-repeat: repeat-x;
+            background-size: 2px 2px;
+            background-position: 0 1.05em
+        }
+
+        s {
+            color: #878787
+        }
+
+
+        a {
+            color: #e74c3c;
+            text-decoration: none
+        }
+
+        img {
+            max-width: 100%;
+            height: auto
+        }
+
+        blockquote {
+            display: block;
+            margin-left: -1em;
+            padding-left: 0.8em;
+            border-left: 0.2em solid #e74c3c;
+            background-color: transparent;
+        }
+
+        hr {
+            height: 1px;
+            border: 0;
+            background-color: #dedede;
+            margin: .7em auto .7em
+        }
+
+        /* LISTS */
+
+        ul li {
+            text-indent: -0.45em
+        }
+
+        ul li:before {
+            content: "•";
+            color: #e74c3c;
+            display: inline-block;
+            margin-right: 0.3em;
+            font-size: 1.5em;
+            vertical-align: middle;
+        }
+
+        ul ul {
+            margin-left: 1.25714em
+        }
+
+        ol li {
+            text-indent: -1.45em
+        }
+
+        ol ol {
+            margin-left: 1.25714em
+        }
+
+        ul, ol {
+            margin-bottom: 1.5em;
+        }
+
+        ul ul, ul ol,
+        ol ul, ol ol {
+            margin-bottom: 0;
+        }
+
+        ol {
+            counter-reset: ol;
+        }
+
+        ol li {
+            counter-increment: ol;
+        }
+
+        ol li:before {
+            content: counter(ol) ".";
+            color: #e06e73;
+            text-align: right;
+            display: inline-block;
+            min-width: 1em;
+            margin-right: 0.5em
+        }
+
+        ol li p {
+            display: inline;
+        }
+
+        /* CODE */
+        code {
+            display: inline;
+            background: #fcfcfc;
+            border: 1px solid #dedede;
+            border-radius: .3em;
+            padding: 0.2em 0.5em;
+            font-family: "Fira Code Retina", monospace;
+            font-size: 0.7em;
+        }
+
+        pre {
+            display: block;
+            background: transparent;
+            padding: 0;
+            margin: 0;
+        }
+
+        pre code {
+            display: block;
+            width: 100%;
+            line-height: 1.45em;
+
+            padding: 1.2em 1em;
+            margin: 0 0 1.5em;
+        }
+
+        .hljs {
+            padding: 0;
+        }
+
+        /* TODO LIST */
+
+        input[type="checkbox"] {
+            position: relative;
+            width: 1rem;
+            height: 1rem;
+            background: white;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            border: 1px solid #ccc;
+            border-radius: .2em;
+            margin: 0.2em .5em 0em -1.7em;
+            margin-bottom: .5em;
+            display: block;
+            float: left;
+            page-break-after: avoid;
+        }
+
+        input[type="checkbox"]:checked::before {
+            display: block;
+            content: '✓';
+            display: initial;
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #e06e73;
+            position: absolute;
+            left: .1em;
+            bottom: -0.2em;
+        }
+
+        input[type="checkbox"] ~ label {
+            display: block;
+            width: 100%;
+            margin-bottom: 0.1em;
+        }
+
+        ul li input[type="checkbox"] {
+            font: none;
+        }
+
+        ul li input[type="checkbox"] ~ label {
+            display: inline-block;
+            width: auto;
+            margin-bottom: 0.1em;
+            margin-left: 0.5em;
+        }
+
+        /*  TABLE */
+
+        table {
+            width: calc(100% + 3em);
+            margin-bottom: 1.5em;
+            margin-left: -1.5em;
+        }
+
+        table tr {
+            border-bottom: 1px solid #dedede;
+        }
+
+        table th {
+            font-weight: 700;
+        }
+
+        table td, table th {
+            vertical-align: top;
+            padding: .2em 1.5em;
+            font-size: .95em
+        }
+
+        thead tr {
+            border-bottom: 4px double #dedede;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Email Campaign Manager - README</h1>
+        <p>Email Campaign Manager Django app for MikeLegal task.</p>
+        <h1>Pre-requisites</h1>
+        <p>Install the pre-requisites using requirements.txt <code>pip install -r requirements.txt</code></p>
+        <h1>How to run</h1>
+        <ul>
+            <li>Clone the repo</li>
+            <li>Install the pre-requisites</li>
+            <li>Run the Django server</li>
+        </ul>
+        <pre><code>cd ECM
+python manage.py runserver
+</code></pre>
+        <ul>
+            <li>Open the browser and go to <a href="http://127.0.0.1:8000/">http://127.0.0.1:8000/</a></li>
+        </ul>
+        <h1>Instructions</h1>
+        <p>Virtual environment is already included in the repo</p>
+        <p>Admin credentials:</p>
+        <pre><code>username: admin
+password: admin
+</code></pre>
+        <p>Manager is the app that is used for everything.</p>
+        <p>SMTP is configured in the settings.py file. Please use your own SMTP credentials. Currently the daily emails
+            are sent out at 12:00 PM. You can change this accordingly.</p>
+        <p>And for prototyping purposes, I have included a custom command to manually trigger the daily mailing process.
+            You can run it using the following command:</p>
+        <pre><code>python manage.py send_email
+</code></pre>
+        <h1>Endpoints</h1>
+        <ul>
+            <li><code><a href="http://127.0.0.1:8000/">/</a></code> : You are here</li>
+            <li><code><a href="http://127.0.0.1:8000/unsub">/unsub</a></code> : Unsubscribe page for the users</li>
+            <li><code><a href="http://127.0.0.1:8000/test">/test</a></code> : Endpoint to send a test email to a user (for testing purposes)</li>
+        </ul>
+    </div>
+</body>
+
+</html>
