@@ -16,9 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from manager.views import unsubscribe
+from manager.views import unsubscribe, send_email
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('unsub/', unsubscribe, name='unsubscribe')
+    path('unsub/', unsubscribe, name='unsubscribe'),
+    path('temp/', send_email, name='send_email') # Temporary URL to send emails
 ]
